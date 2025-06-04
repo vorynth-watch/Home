@@ -2,138 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vorynth Watches</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <title>Vorynth | Signature Collection</title>
   <style>
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111;
+      color: #fff;
       margin: 0;
-      font-family: 'Playfair Display', serif;
-      background-color: #f5f5f5;
-      color: #1a1a1a;
+      padding: 20px;
     }
 
-    .navbar {
-      background-color: #0c0c0c;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      position: relative;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #2ecc71;
-    }
-
-    .brand {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .intro {
+    h1 {
       text-align: center;
-      padding: 3rem 1rem 2rem 1rem;
-      background-color: white;
+      margin-bottom: 40px;
+      font-size: 3em;
+      color: #e2c675;
+      letter-spacing: 2px;
     }
 
-    .intro h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .intro p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 1.5rem auto;
-    }
-
-    .cta-button {
-      background-color: #004c45;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #007c6d;
-    }
-
-    .catalog {
-      padding: 3rem 1rem;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      padding: 0 20px;
     }
 
     .product {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      border-top: 1px solid #ccc;
-      padding: 2rem 0;
-      flex-wrap: wrap;
+      background-color: #1a1a1a;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
     }
 
-    .product:nth-child(even) {
-      flex-direction: row-reverse;
+    .product:hover {
+      transform: scale(1.05);
     }
 
     .product img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 100%;
+      height: auto;
       cursor: pointer;
     }
 
     .description-box {
-      max-width: 400px;
+      padding: 20px;
     }
 
     .description-box h2 {
-      color: #004c45;
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+      margin: 0 0 10px;
+      font-size: 1.4em;
+      color: #e2c675;
     }
 
     .description-box p {
-      font-size: 1rem;
+      font-size: 0.95em;
+      color: #ccc;
+      line-height: 1.5;
     }
 
     .review {
+      margin-top: 15px;
       font-style: italic;
-      color: #555;
-      margin-top: 0.5rem;
+      color: #888;
+      font-size: 0.85em;
     }
 
-    footer {
-      background-color: #0c0c0c;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-
-    /* Zoom modal styles */
+    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
@@ -143,63 +78,48 @@
       top: 0;
       width: 100%;
       height: 100%;
-      overflow: auto;
       background-color: rgba(0,0,0,0.9);
     }
 
     .modal-content {
-      display: block;
       margin: auto;
+      display: block;
       max-width: 90%;
       max-height: 80%;
     }
 
-    .modal-close {
+    .close {
       position: absolute;
-      top: 20px;
-      right: 35px;
-      color: white;
+      top: 30px;
+      right: 50px;
+      color: #fff;
       font-size: 40px;
-      font-weight: bold;
       cursor: pointer;
     }
 
-    @media (max-width: 768px) {
-      .product {
-        flex-direction: column !important;
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 2em;
       }
 
-      .product img {
-        width: 90vw;
-        height: 90vw;
+      .description-box h2 {
+        font-size: 1.2em;
       }
 
-      .description-box {
-        padding: 0 1rem;
-        text-align: center;
+      .description-box p {
+        font-size: 0.9em;
       }
     }
   </style>
 </head>
 <body>
-  <div class="navbar">
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#catalog">Catalog</a>
-    </div>
-    <div class="brand">Vorynth</div>
-    <div style="width: 25%;"></div>
-  </div>
 
-  <section class="intro" id="home">
-    <h1>Vorynth<sup>™</sup> Luxury Sports Watches</h1>
-    <p>Where precision engineering meets bold design. Elevate your style with Vorynth's signature timepieces.</p>
-    <button class="cta-button">Shop Now</button>
-  </section>
+  <h1>Vorynth Signature Collection</h1>
 
-  <section class="catalog" id="catalog">
+  <div class="gallery">
+    <!-- Watch 1 -->
     <div class="product">
-      <img src="watch1.jpg" alt="Watch 1" onclick="openModal(this.src)">
+      <img src="watch1.jpeg" alt="Omega Seamaster Chronograph" onclick="openModal(this.src)">
       <div class="description-box">
         <h2>Omega Seamaster Chronograph</h2>
         <p>Built for ocean explorers and time perfectionists, this diver’s chronograph features wave patterns and a ceramic bezel with rose gold accents.</p>
@@ -207,53 +127,60 @@
       </div>
     </div>
 
+    <!-- Watch 2 -->
     <div class="product">
-      <img src="watch2.jpg" alt="Watch 2" onclick="openModal(this.src)">
+      <img src="ulysse-nardin-luxury-watch.jpg" alt="Ulysse Nardin Perpetual GMT" onclick="openModal(this.src)">
       <div class="description-box">
         <h2>Ulysse Nardin Perpetual GMT</h2>
-        <p>This mechanical marvel boasts a futuristic dial with dual time zones and perpetual calendar complications wrapped in luxury finishing.</p>
-        <div class="review">“Looks like it came from the future!” – Amelia K.</div>
+        <p>Navigate time zones in style. The perpetual calendar and dual-time function make this a traveler’s dream, encased in brushed titanium elegance.</p>
+        <div class="review">“Perfect for my business trips. Sleek and smart.” – Akshay M.</div>
       </div>
     </div>
 
+    <!-- Watch 3 -->
     <div class="product">
-      <img src="watch3.jpg" alt="Watch 3" onclick="openModal(this.src)">
+      <img src="50-great-watches-buy-2020-21-end-year-luxury-watches-mens-timepiece-iconic-pieces-top-50-best-prices-corum-golden-bridge-SPECIAL-men-2.jpg" alt="Corum Golden Bridge" onclick="openModal(this.src)">
       <div class="description-box">
-        <h2>HORIZEN Royal Classic</h2>
-        <p>A two-tone bracelet, blue sunburst dial, and multifunction layout define this elegant piece made for the bold and classy.</p>
-        <div class="review">“Luxury feel without the crazy price!” – Rajan M.</div>
+        <h2>Corum Golden Bridge</h2>
+        <p>A transparent architectural marvel featuring a vertical baguette movement. A bold expression of horological design and mastery.</p>
+        <div class="review">“It’s a conversation starter every time.” – Rahul D.</div>
       </div>
     </div>
 
+    <!-- Watch 4 -->
     <div class="product">
-      <img src="watch4.jpg" alt="Watch 4" onclick="openModal(this.src)">
+      <img src="watch4.jpg" alt="Rolex Sea-Dweller Custom Gold" onclick="openModal(this.src)">
       <div class="description-box">
         <h2>Rolex Sea-Dweller Custom Gold</h2>
-        <p>A striking black-gold dive watch with custom detailing, this Rolex merges traditional ruggedness with ornamental luxury.</p>
-        <div class="review">“Absolutely love the gold accents – total eye-catcher!” – Sophia G.</div>
+        <p>The iconic diver’s watch reimagined with a luxurious golden twist. 1,220-meter water resistance meets timeless Rolex heritage.</p>
+        <div class="review">“Gold with grit. Just the way I like it.” – Mohan R.</div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Zoom Modal -->
-  <div id="zoomModal" class="modal" onclick="closeModal()">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
+  <!-- Modal -->
+  <div id="myModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
     <img class="modal-content" id="modalImage">
   </div>
 
-  <footer>
-    &copy; 2025 Vorynth. All rights reserved.
-  </footer>
-
   <script>
     function openModal(src) {
-      document.getElementById("zoomModal").style.display = "block";
-      document.getElementById("modalImage").src = src;
+      const modal = document.getElementById("myModal");
+      const modalImg = document.getElementById("modalImage");
+      modal.style.display = "block";
+      modalImg.src = src;
     }
 
     function closeModal() {
-      document.getElementById("zoomModal").style.display = "none";
+      document.getElementById("myModal").style.display = "none";
     }
+
+    // Allow ESC key to close modal
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") closeModal();
+    });
   </script>
+
 </body>
 </html>
