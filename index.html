@@ -79,12 +79,21 @@
       border-top: 1px solid #ccc;
     }
 
-    .product img {
+    .image-wrapper {
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .image-wrapper img {
       width: 300px;
       height: 300px;
       object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+      display: block;
+    }
+
+    .image-wrapper:hover img {
+      transform: scale(1.1);
     }
 
     .description-box {
@@ -138,7 +147,7 @@
         flex-direction: column;
       }
 
-      .product img {
+      .image-wrapper img {
         width: 90vw;
         height: 90vw;
       }
@@ -163,14 +172,16 @@
   <!-- Intro -->
   <section class="intro" id="home">
     <h1>Vorynth™ Luxury Timepieces</h1>
-    <h2>Crafted to perfection. Designed for distinction.</h2>
-    <p>Where elegance meets engineering. Explore our exclusive watch collection crafted for those who value timeless performance and luxury.</p>
+    <h2>Elegance meets engineering in every tick.</h2>
+    <p>Explore our exclusive watch collection crafted for those who value timeless performance and luxury.</p>
   </section>
 
   <!-- Product Catalog -->
   <section class="catalog" id="collection">
     <div class="product">
-      <img src="watch1.jpeg" alt="Vorynth Eclipse Black">
+      <a class="image-wrapper" href="watch1.jpeg" target="_blank">
+        <img src="watch1.jpeg" alt="Vorynth Eclipse Black">
+      </a>
       <div class="description-box">
         <h2>Vorynth Eclipse Black</h2>
         <p>Sleek, matte black finish with chrome indices. Built for night elegance and bold presence.</p>
@@ -180,7 +191,9 @@
     </div>
 
     <div class="product">
-      <img src="watch4.jpg" alt="Vorynth Alpine Silver">
+      <a class="image-wrapper" href="watch4.jpg" target="_blank">
+        <img src="watch4.jpg" alt="Vorynth Alpine Silver">
+      </a>
       <div class="description-box">
         <h2>Vorynth Alpine Silver</h2>
         <p>A reflective silver timepiece inspired by snowy peaks and modern craftsmanship.</p>
@@ -190,7 +203,9 @@
     </div>
 
     <div class="product">
-      <img src="watch3.jpg" alt="Vorynth Titan Blue">
+      <a class="image-wrapper" href="50-great-watches-buy-2020-21-end-year-luxury-watches-mens-timepiece-iconic-pieces-top-50-best-prices-corum-golden-bridge-SPECIAL-men-2.jpg" target="_blank">
+        <img src="50-great-watches-buy-2020-21-end-year-luxury-watches-mens-timepiece-iconic-pieces-top-50-best-prices-corum-golden-bridge-SPECIAL-men-2.jpg" alt="Vorynth Titan Blue">
+      </a>
       <div class="description-box">
         <h2>Vorynth Titan Blue</h2>
         <p>Bold blue dial with skeletal mechanics. For those who wear power on their wrist.</p>
@@ -200,7 +215,9 @@
     </div>
 
     <div class="product">
-      <img src="watch2.jpg" alt="Vorynth Nautic Gold">
+      <a class="image-wrapper" href="ulysse-nardin-luxury-watch.jpg" target="_blank">
+        <img src="ulysse-nardin-luxury-watch.jpg" alt="Vorynth Nautic Gold">
+      </a>
       <div class="description-box">
         <h2>Vorynth Nautic Gold</h2>
         <p>Gold-accented marine masterpiece with deep blue dial. Sophistication redefined.</p>
