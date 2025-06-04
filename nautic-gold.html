@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Vorynth Nautic Gold - Vorynth</title>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vorynth Nautic Gold</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"/>
   <style>
     body {
@@ -24,12 +25,10 @@
       color: white;
       text-decoration: none;
       margin: 0 1rem;
-      font-size: 1rem;
     }
     .brand {
       font-size: 1.5rem;
       font-weight: bold;
-      letter-spacing: 1px;
     }
     .product-page {
       max-width: 800px;
@@ -43,78 +42,83 @@
     .product-page img {
       width: 100%;
       max-width: 400px;
-      height: auto;
       border-radius: 10px;
       margin-bottom: 1rem;
-      object-fit: cover;
     }
     h1 {
       font-size: 2rem;
-      margin-bottom: 0.5rem;
     }
     .price {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin: 1rem 0;
-      color: #004c45;
     }
-    select {
-      padding: 0.5rem;
-      font-size: 1rem;
-      margin-top: 0.5rem;
-    }
-    .total {
-      font-size: 1.1rem;
+    .purchase-options {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
       margin: 1rem 0;
-      font-weight: bold;
+    }
+    .option-box input[type="radio"] {
+      display: none;
+    }
+    .option-box label {
+      display: inline-block;
+      padding: 0.8rem 1.2rem;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: white;
+      position: relative;
+    }
+    .option-box input[type="radio"]:checked + label {
+      border-color: #004c45;
+      background-color: #e0f7f3;
+    }
+    .option-box input[type="radio"]:checked + label::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 10px;
+      height: 10px;
+      background-color: #004c45;
+      border-radius: 50%;
     }
     .buy-button {
       background-color: #004c45;
       color: white;
       padding: 0.75rem 1.5rem;
-      font-size: 1rem;
       border: none;
       border-radius: 5px;
+      font-size: 1rem;
       cursor: pointer;
-      margin-bottom: 1.5rem;
+      margin: 1rem 0;
     }
-    .buy-button:hover {
-      background-color: #007c6d;
-    }
-
     .reviews {
       margin-top: 2rem;
-      text-align: center;
-    }
-
-    .reviews h3 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .review-box {
-      background: #f0f2f5;
-      padding: 1rem;
-      border-radius: 8px;
-      margin: 0.5rem auto;
-      max-width: 500px;
-      font-style: italic;
-      font-size: 0.95rem;
-      color: #333;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-
-    .review-box.left {
       text-align: left;
     }
-
-    .review-box.right {
-      text-align: right;
+    .review {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 0.75rem 1rem;
+      border-left: 4px solid #004c45;
+      margin-bottom: 1rem;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #444;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-
-    @media (max-width: 600px) {
-      .review-box {
-        text-align: center !important;
-      }
+    .stars {
+      color: #f5a623;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+    footer {
+      background-color: #0a0f24;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
@@ -131,58 +135,33 @@
     <img src="50-great-watches-buy-2020-21-end-year-luxury-watches-mens-timepiece-iconic-pieces-top-50-best-prices-corum-golden-bridge-SPECIAL-men-2.jpg" alt="Vorynth Nautic Gold">
     <h1>Vorynth Nautic Gold</h1>
     <p>Gold-accented marine masterpiece with deep blue dial. Sophistication redefined.</p>
-    <div class="price">Price: ₹5000</div>
+    <div class="price">Starting at ₹5000</div>
 
-    <label for="qty">Quantity:</label><br>
-    <select id="qty" onchange="updateTotal()">
-      <option value="1">1</option>
-      <option value="2">2 (20% OFF)</option>
-      <option value="3">3 (30% OFF)</option>
-    </select>
-
-    <div class="total" id="total">Total: ₹5000</div>
+    <form class="purchase-options">
+      <div class="option-box">
+        <input type="radio" id="nautic-1" name="quantity" checked>
+        <label for="nautic-1">Buy 1 – ₹5000</label>
+      </div>
+      <div class="option-box">
+        <input type="radio" id="nautic-2" name="quantity">
+        <label for="nautic-2">Buy 2 – ₹8000</label>
+      </div>
+      <div class="option-box">
+        <input type="radio" id="nautic-3" name="quantity">
+        <label for="nautic-3">Buy 3 – ₹10500</label>
+      </div>
+    </form>
 
     <button class="buy-button">Pay with UPI</button>
 
     <div class="reviews">
-      <h3>Customer Reviews</h3>
-      
-        <div class="review-box left">
-          Absolutely stunning timepiece! – Rahul K.
-        </div>
-        
-        <div class="review-box right">
-          Feels premium and fits perfectly. – Priya M.
-        </div>
-        
-        <div class="review-box left">
-          Loved the dial design. Great quality! – Arjun S.
-        </div>
-        
-        <div class="review-box right">
-          Better than expected for this price. – Meera T.
-        </div>
-        
-        <div class="review-box left">
-          Would definitely recommend to others. – Kunal R.
-        </div>
-        
-        <div class="review-box right">
-          Stylish and durable – fits any occasion. – Ananya V.
-        </div>
-        
+      <div class="review"><div class="stars">★★★★★</div>"A masterpiece—feels like royalty." – Dana K.</div>
+      <div class="review"><div class="stars">★★★★★</div>"This blue and gold combo is fire!" – Akash J.</div>
+      <div class="review"><div class="stars">★★★★☆</div>"Perfect balance of flash and class." – Farah N.</div>
+      <div class="review"><div class="stars">★★★★★</div>"Gifted it, they adored it." – Rajan S.</div>
     </div>
   </div>
 
-  <script>
-    function updateTotal() {
-      const qty = parseInt(document.getElementById("qty").value);
-      let base = 5000;
-      let total = base * qty;
-      if (qty === 2) total *= 0.8;
-      if (qty === 3) total *= 0.7;
-      document.getElementById("total").innerText = "Total: ₹" + Math.round(total);
-    }
-  </script>
+  <footer>&copy; 2025 Vorynth. All rights reserved.</footer>
 </body>
 </html>
