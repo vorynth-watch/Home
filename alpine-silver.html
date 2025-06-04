@@ -152,10 +152,23 @@
         <label for="alpine-3">Buy 3 – ₹10500</label>
       </div>
     </form>
-
-   <a href="upi://pay?pa=gamertaggaming@okaxis&pn=Vorynth&am=5000&cu=INR">
-  <button class="buy-button">Pay with UPI</button>
+<!-- UPI Payment Button -->
+<a id="upiLink" class="upi-button" href="upi://pay?pa=gamertaggaming2@okaxis&pn=Vorynth&am=5000&cu=INR">
+  Pay with UPI
 </a>
+
+<!-- UPI Script to Auto-Update Amount -->
+<script>
+  const radios = document.querySelectorAll('input[name="quantity"]');
+  const upiLink = document.getElementById('upiLink');
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      const amount = radio.value;
+      upiLink.href = `upi://pay?pa=gamertaggaming@okaxis&pn=Vorynth&am=${amount}&cu=INR`;
+    });
+  });
+</script>
+
 
     <div class="reviews">
       <div class="review"><div class="stars">★★★★★</div>"Feels like a luxury Swiss classic." – Sofia M.</div>
