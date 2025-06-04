@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vorynth Eclipse Black - Vorynth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #f4f6f9;
+      color: #111;
+    }
+    .navbar {
+      background-color: #0a0f24;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      color: white;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 1rem;
+    }
+    .brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .product-page {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product-page img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .price {
+      font-size: 1.3rem;
+      margin: 1rem 0;
+      color: #004c45;
+    }
+    select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+    .total {
+      font-size: 1.1rem;
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+    .buy-button {
+      background-color: #004c45;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 1.5rem;
+    }
+    .buy-button:hover {
+      background-color: #007c6d;
+    }
+
+    .reviews {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .reviews h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .review-box {
+      background: #f0f2f5;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 0.5rem auto;
+      max-width: 500px;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #333;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .review-box.left {
+      text-align: left;
+    }
+
+    .review-box.right {
+      text-align: right;
+    }
+
+    @media (max-width: 600px) {
+      .review-box {
+        text-align: center !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="brand">Vorynth</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#collection">Collection</a>
+    </div>
+  </div>
+
+  <div class="product-page">
+    <img src="watch1.jpeg" alt="Vorynth Eclipse Black">
+    <h1>Vorynth Eclipse Black</h1>
+    <p>Sleek, matte black finish with chrome indices. Built for night elegance and bold presence.</p>
+    <div class="price">Price: ₹5000</div>
+
+    <label for="qty">Quantity:</label><br>
+    <select id="qty" onchange="updateTotal()">
+      <option value="1">1</option>
+      <option value="2">2 (20% OFF)</option>
+      <option value="3">3 (30% OFF)</option>
+    </select>
+
+    <div class="total" id="total">Total: ₹5000</div>
+
+    <button class="buy-button">Pay with UPI</button>
+
+    <div class="reviews">
+      <h3>Customer Reviews</h3>
+      
+        <div class="review-box left">
+          Absolutely stunning timepiece! – Rahul K.
+        </div>
+        
+        <div class="review-box right">
+          Feels premium and fits perfectly. – Priya M.
+        </div>
+        
+        <div class="review-box left">
+          Loved the dial design. Great quality! – Arjun S.
+        </div>
+        
+        <div class="review-box right">
+          Better than expected for this price. – Meera T.
+        </div>
+        
+        <div class="review-box left">
+          Would definitely recommend to others. – Kunal R.
+        </div>
+        
+        <div class="review-box right">
+          Stylish and durable – fits any occasion. – Ananya V.
+        </div>
+        
+    </div>
+  </div>
+
+  <script>
+    function updateTotal() {
+      const qty = parseInt(document.getElementById("qty").value);
+      let base = 5000;
+      let total = base * qty;
+      if (qty === 2) total *= 0.8;
+      if (qty === 3) total *= 0.7;
+      document.getElementById("total").innerText = "Total: ₹" + Math.round(total);
+    }
+  </script>
+</body>
+</html>
