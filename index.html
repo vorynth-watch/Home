@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background-color: #eef1f6;
+      background-color: #eceff1;
       color: #111;
     }
 
@@ -47,15 +47,7 @@
 
     .intro h1 {
       font-size: 2.5rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .intro h2 {
-      font-size: 1.2rem;
-      font-weight: normal;
-      color: #555;
-      margin-top: 0;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.5rem;
     }
 
     .intro p {
@@ -80,6 +72,7 @@
     }
 
     .image-wrapper {
+      display: inline-block;
       overflow: hidden;
       border-radius: 10px;
     }
@@ -89,7 +82,8 @@
       height: 300px;
       object-fit: cover;
       transition: transform 0.3s ease;
-      display: block;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
     .image-wrapper:hover img {
@@ -172,14 +166,13 @@
   <!-- Intro -->
   <section class="intro" id="home">
     <h1>Vorynth™ Luxury Timepieces</h1>
-    <h2>Elegance meets engineering in every tick.</h2>
-    <p>Explore our exclusive watch collection crafted for those who value timeless performance and luxury.</p>
+    <p>Discover time reimagined. Premium design, precision mechanics, and timeless style in every piece.</p>
   </section>
 
   <!-- Product Catalog -->
   <section class="catalog" id="collection">
     <div class="product">
-      <a class="image-wrapper" href="watch1.jpeg" target="_blank">
+      <a class="image-wrapper" href="watch1.jpeg">
         <img src="watch1.jpeg" alt="Vorynth Eclipse Black">
       </a>
       <div class="description-box">
@@ -191,7 +184,7 @@
     </div>
 
     <div class="product">
-      <a class="image-wrapper" href="watch4.jpg" target="_blank">
+      <a class="image-wrapper" href="watch4.jpg">
         <img src="watch4.jpg" alt="Vorynth Alpine Silver">
       </a>
       <div class="description-box">
@@ -203,7 +196,7 @@
     </div>
 
     <div class="product">
-      <a class="image-wrapper" href="50-great-watches-buy-2020-21-end-year-luxury-watches-mens-timepiece-iconic-pieces-top-50-best-prices-corum-golden-bridge-SPECIAL-men-2.jpg" target="_blank">
+      <a class="image-wrapper" href="50-great-watches-buy-2020-21-end-year-luxury-watches-mens-timepiece-iconic-pieces-top-50-best-prices-corum-golden-bridge-SPECIAL-men-2.jpg">
         <img src="50-great-watches-buy-2020-21-end-year-luxury-watches-mens-timepiece-iconic-pieces-top-50-best-prices-corum-golden-bridge-SPECIAL-men-2.jpg" alt="Vorynth Titan Blue">
       </a>
       <div class="description-box">
@@ -215,7 +208,7 @@
     </div>
 
     <div class="product">
-      <a class="image-wrapper" href="ulysse-nardin-luxury-watch.jpg" target="_blank">
+      <a class="image-wrapper" href="ulysse-nardin-luxury-watch.jpg">
         <img src="ulysse-nardin-luxury-watch.jpg" alt="Vorynth Nautic Gold">
       </a>
       <div class="description-box">
