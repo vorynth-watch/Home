@@ -4,33 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vorynth | Luxury Watches</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Playfair Display', serif;
       background-color: #111;
       color: #fff;
       margin: 0;
-      padding: 20px;
     }
 
-    h1 {
+    /* Navbar */
+    .navbar {
+      background-color: #0a0f1a;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #2ecc71;
+    }
+
+    /* Title */
+    h2.title {
       text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 40px;
+      font-size: 2.8rem;
+      margin: 2rem 0;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
+      padding: 0 20px 40px 20px;
     }
 
     .watch-card {
       background-color: #1a1a1a;
       padding: 20px;
       border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
       transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .watch-card:hover {
@@ -38,26 +69,51 @@
     }
 
     .watch-card img {
-      width: 100%;
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
       border-radius: 12px;
-      margin-bottom: 15px;
-      height: auto;
+      margin-bottom: 20px;
       cursor: zoom-in;
     }
 
     .watch-name {
-      font-size: 1.2rem;
-      font-weight: bold;
+      font-size: 1.5rem;
+      font-weight: 700;
       margin-bottom: 10px;
+    }
+
+    .watch-desc {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 15px;
+      text-align: center;
     }
 
     .review {
       font-size: 0.95rem;
-      color: #ccc;
-      line-height: 1.5;
+      color: #aaa;
+      font-style: italic;
+      margin-bottom: 20px;
+      text-align: center;
     }
 
-    /* Fullscreen Zoom Modal */
+    .cta-button {
+      background-color: #004c45;
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #007c6d;
+    }
+
+    /* Zoom Modal */
     .zoom-modal {
       display: none;
       position: fixed;
@@ -77,41 +133,68 @@
       border-radius: 12px;
       box-shadow: 0 0 20px #000;
     }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        margin-top: 0.5rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Vorynth Luxury Timepieces</h1>
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>Vorynth</h1>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#collection">Collection</a>
+    </div>
+  </div>
 
+  <!-- Title -->
+  <h2 class="title" id="collection">Luxury Timepieces</h2>
+
+  <!-- Watch Grid -->
   <div class="grid">
-
     <!-- Watch 1 -->
     <div class="watch-card">
       <img src="watch1.jpeg" alt="Vorynth Black Diamond" onclick="zoom(this)">
       <div class="watch-name">Vorynth Black Diamond</div>
-      <div class="review">"I never knew a timepiece could look this sharp. It feels like it was made for my wrist." – John Mercer ★★★★★</div>
+      <div class="watch-desc">Polished obsidian bezel with precision detailing. Built for timeless power.</div>
+      <div class="review">"Feels like wearing confidence." – John Mercer ★★★★★</div>
+      <button class="cta-button">Shop Now</button>
     </div>
 
     <!-- Watch 2 -->
     <div class="watch-card">
       <img src="ulysse-nardin-luxury-watch.jpg" alt="Vorynth Midnight Steel" onclick="zoom(this)">
       <div class="watch-name">Vorynth Midnight Steel</div>
-      <div class="review">"Stunning in every detail. The contrast between the polished case and matte dial is breathtaking." – Aliyah Cortez ★★★★☆</div>
+      <div class="watch-desc">Midnight tones and cold steel casing with sapphire-tinted crown.</div>
+      <div class="review">"Dark elegance that turns heads." – Aliyah Cortez ★★★★☆</div>
+      <button class="cta-button">Shop Now</button>
     </div>
 
     <!-- Watch 3 -->
     <div class="watch-card">
       <img src="50-great-watches-buy-2020-21-end-year-luxury-watches-mens-timepiece-iconic-pieces-top-50-best-prices-corum-golden-bridge-SPECIAL-men-2.jpg" alt="Vorynth Golden Lineage" onclick="zoom(this)">
       <div class="watch-name">Vorynth Golden Lineage</div>
-      <div class="review">"A conversation starter every time. Elegant, bold, and perfectly balanced." – Marcus Ellis ★★★★★</div>
+      <div class="watch-desc">Sculpted gold and crystal elegance with heritage accents.</div>
+      <div class="review">"Luxury at its finest. A true classic." – Marcus Ellis ★★★★★</div>
+      <button class="cta-button">Shop Now</button>
     </div>
 
     <!-- Watch 4 -->
     <div class="watch-card">
       <img src="watch4.jpg" alt="Vorynth Arctic Phantom" onclick="zoom(this)">
       <div class="watch-name">Vorynth Arctic Phantom</div>
-      <div class="review">"Cool, crisp, and clean. This watch exudes quiet power." – Dalia Chen ★★★★☆</div>
+      <div class="watch-desc">Icy platinum chassis with frost-blue detail. Subtle. Striking.</div>
+      <div class="review">"Sub-zero cool in a hot world." – Dalia Chen ★★★★☆</div>
+      <button class="cta-button">Shop Now</button>
     </div>
-
   </div>
 
   <!-- Zoom Modal -->
