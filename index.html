@@ -75,6 +75,7 @@
       display: inline-block;
       overflow: hidden;
       border-radius: 10px;
+      cursor: zoom-in;
     }
 
     .image-wrapper img {
@@ -151,9 +152,39 @@
         padding: 0 1rem;
       }
     }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .modal:target {
+      display: flex;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Modal Container -->
+  <div id="imageModal" class="modal" onclick="this.style.display='none'">
+    <img id="modalImage" src="" alt="Zoomed Watch">
+  </div>
+
   <!-- Navbar -->
   <div class="navbar">
     <div class="brand">Vorynth</div>
@@ -172,9 +203,9 @@
   <!-- Product Catalog -->
   <section class="catalog" id="collection">
     <div class="product">
-      <a class="image-wrapper" href="watch1.jpeg">
+      <div class="image-wrapper" onclick="showModal('watch1.jpeg')">
         <img src="watch1.jpeg" alt="Vorynth Eclipse Black">
-      </a>
+      </div>
       <div class="description-box">
         <h2>Vorynth Eclipse Black</h2>
         <p>Sleek, matte black finish with chrome indices. Built for night elegance and bold presence.</p>
@@ -184,9 +215,9 @@
     </div>
 
     <div class="product">
-      <a class="image-wrapper" href="watch4.jpg">
+      <div class="image-wrapper" onclick="showModal('watch4.jpg')">
         <img src="watch4.jpg" alt="Vorynth Alpine Silver">
-      </a>
+      </div>
       <div class="description-box">
         <h2>Vorynth Alpine Silver</h2>
         <p>A reflective silver timepiece inspired by snowy peaks and modern craftsmanship.</p>
@@ -196,9 +227,9 @@
     </div>
 
     <div class="product">
-      <a class="image-wrapper" href="50-great-watches-buy-2020-21-end-year-luxury-watches-mens-timepiece-iconic-pieces-top-50-best-prices-corum-golden-bridge-SPECIAL-men-2.jpg">
+      <div class="image-wrapper" onclick="showModal('50-great-watches-buy-2020-21-end-year-luxury-watches-mens-timepiece-iconic-pieces-top-50-best-prices-corum-golden-bridge-SPECIAL-men-2.jpg')">
         <img src="50-great-watches-buy-2020-21-end-year-luxury-watches-mens-timepiece-iconic-pieces-top-50-best-prices-corum-golden-bridge-SPECIAL-men-2.jpg" alt="Vorynth Titan Blue">
-      </a>
+      </div>
       <div class="description-box">
         <h2>Vorynth Titan Blue</h2>
         <p>Bold blue dial with skeletal mechanics. For those who wear power on their wrist.</p>
@@ -208,9 +239,9 @@
     </div>
 
     <div class="product">
-      <a class="image-wrapper" href="ulysse-nardin-luxury-watch.jpg">
+      <div class="image-wrapper" onclick="showModal('ulysse-nardin-luxury-watch.jpg')">
         <img src="ulysse-nardin-luxury-watch.jpg" alt="Vorynth Nautic Gold">
-      </a>
+      </div>
       <div class="description-box">
         <h2>Vorynth Nautic Gold</h2>
         <p>Gold-accented marine masterpiece with deep blue dial. Sophistication redefined.</p>
@@ -224,5 +255,14 @@
   <footer>
     &copy; 2025 Vorynth. All rights reserved.
   </footer>
+
+  <script>
+    function showModal(src) {
+      const modal = document.getElementById("imageModal");
+      const modalImage = document.getElementById("modalImage");
+      modalImage.src = src;
+      modal.style.display = "flex";
+    }
+  </script>
 </body>
 </html>
