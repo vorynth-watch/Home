@@ -44,7 +44,6 @@
       transform: translateX(-50%);
       font-size: 1.5rem;
       font-weight: bold;
-      text-align: center;
     }
 
     .intro {
@@ -103,6 +102,7 @@
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
     }
 
     .description-box {
@@ -119,12 +119,49 @@
       font-size: 1rem;
     }
 
+    .review {
+      font-style: italic;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
     footer {
       background-color: #0c0c0c;
       color: white;
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
+    }
+
+    /* Zoom modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .modal-content {
+      display: block;
+      margin: auto;
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     @media (max-width: 768px) {
@@ -145,7 +182,6 @@
   </style>
 </head>
 <body>
-  <!-- Navbar -->
   <div class="navbar">
     <div class="nav-links">
       <a href="#home">Home</a>
@@ -155,59 +191,69 @@
     <div style="width: 25%;"></div>
   </div>
 
-  <!-- Intro -->
   <section class="intro" id="home">
     <h1>Vorynth<sup>™</sup> Luxury Sports Watches</h1>
-    <p>Where automotive passion meets timekeeping precision. Our watches are inspired by the dynamic design and engineering of high-performance cars.</p>
+    <p>Where precision engineering meets bold design. Elevate your style with Vorynth's signature timepieces.</p>
     <button class="cta-button">Shop Now</button>
   </section>
 
-  <!-- Catalog -->
   <section class="catalog" id="catalog">
     <div class="product">
-      <img src="61Df2w5RyzL._AC_UY1000_.jpg" alt="Red Brake Caliper Spinner">
+      <img src="watch1.jpg" alt="Watch 1" onclick="openModal(this.src)">
       <div class="description-box">
-        <h2>Red Brake Caliper Spinner</h2>
-        <p>Combining strength and detail, this model features a rotating dial mimicking a sports wheel, accented by a bold red brake caliper.</p>
+        <h2>Omega Seamaster Chronograph</h2>
+        <p>Built for ocean explorers and time perfectionists, this diver’s chronograph features wave patterns and a ceramic bezel with rose gold accents.</p>
+        <div class="review">“Feels like I’m wearing precision on my wrist!” – James L.</div>
       </div>
     </div>
 
     <div class="product">
-      <img src="61hFCUrmBzL._AC_UY1000_DpWeblab_.jpg" alt="Precision Rim Design">
+      <img src="watch2.jpg" alt="Watch 2" onclick="openModal(this.src)">
       <div class="description-box">
-        <h2>Precision Rim Design</h2>
-        <p>Crafted with automotive precision, this timepiece merges performance and aesthetics with a sleek black and red contrast.</p>
+        <h2>Ulysse Nardin Perpetual GMT</h2>
+        <p>This mechanical marvel boasts a futuristic dial with dual time zones and perpetual calendar complications wrapped in luxury finishing.</p>
+        <div class="review">“Looks like it came from the future!” – Amelia K.</div>
       </div>
     </div>
 
     <div class="product">
-      <img src="9937-6.webp" alt="Neon Green Speed Edition">
+      <img src="watch3.jpg" alt="Watch 3" onclick="openModal(this.src)">
       <div class="description-box">
-        <h2>Neon Green Speed Edition</h2>
-        <p>Vibrant green highlights add a high-energy twist to this watch, perfect for those who love speed and style.</p>
+        <h2>HORIZEN Royal Classic</h2>
+        <p>A two-tone bracelet, blue sunburst dial, and multifunction layout define this elegant piece made for the bold and classy.</p>
+        <div class="review">“Luxury feel without the crazy price!” – Rajan M.</div>
       </div>
     </div>
 
     <div class="product">
-      <img src="ferrari-spinning-wheel-watch.jpg" alt="Metallic Rotor Elegance">
+      <img src="watch4.jpg" alt="Watch 4" onclick="openModal(this.src)">
       <div class="description-box">
-        <h2>Metallic Rotor Elegance</h2>
-        <p>Showcasing metallic accents and a futuristic design, this piece captures the essence of luxury motorsports.</p>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="ferrari-spinning-wheel-watch-500x500.webp" alt="Sportline Minimal Red">
-      <div class="description-box">
-        <h2>Sportline Minimal Red</h2>
-        <p>A minimalist approach with sleek red details and a bold brake rotor centerpiece. Pure automotive inspiration.</p>
+        <h2>Rolex Sea-Dweller Custom Gold</h2>
+        <p>A striking black-gold dive watch with custom detailing, this Rolex merges traditional ruggedness with ornamental luxury.</p>
+        <div class="review">“Absolutely love the gold accents – total eye-catcher!” – Sophia G.</div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Zoom Modal -->
+  <div id="zoomModal" class="modal" onclick="closeModal()">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
   <footer>
     &copy; 2025 Vorynth. All rights reserved.
   </footer>
+
+  <script>
+    function openModal(src) {
+      document.getElementById("zoomModal").style.display = "block";
+      document.getElementById("modalImage").src = src;
+    }
+
+    function closeModal() {
+      document.getElementById("zoomModal").style.display = "none";
+    }
+  </script>
 </body>
 </html>
