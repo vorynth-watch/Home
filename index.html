@@ -1,186 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Vorynth | Signature Collection</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vorynth | Luxury Watches</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #111;
       color: #fff;
       margin: 0;
       padding: 20px;
     }
-
     h1 {
       text-align: center;
+      font-size: 3rem;
       margin-bottom: 40px;
-      font-size: 3em;
-      color: #e2c675;
-      letter-spacing: 2px;
     }
-
-    .gallery {
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      padding: 0 20px;
+      gap: 30px;
     }
-
-    .product {
+    .watch-card {
       background-color: #1a1a1a;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-      transition: transform 0.3s ease;
-    }
-
-    .product:hover {
-      transform: scale(1.05);
-    }
-
-    .product img {
-      width: 100%;
-      height: auto;
-      cursor: pointer;
-    }
-
-    .description-box {
       padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease;
     }
-
-    .description-box h2 {
-      margin: 0 0 10px;
-      font-size: 1.4em;
-      color: #e2c675;
+    .watch-card:hover {
+      transform: scale(1.03);
     }
-
-    .description-box p {
-      font-size: 0.95em;
+    .watch-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      height: auto;
+    }
+    .watch-name {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .review {
+      font-size: 0.95rem;
       color: #ccc;
       line-height: 1.5;
-    }
-
-    .review {
-      margin-top: 15px;
-      font-style: italic;
-      color: #888;
-      font-size: 0.85em;
-    }
-
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      padding-top: 60px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.9);
-    }
-
-    .modal-content {
-      margin: auto;
-      display: block;
-      max-width: 90%;
-      max-height: 80%;
-    }
-
-    .close {
-      position: absolute;
-      top: 30px;
-      right: 50px;
-      color: #fff;
-      font-size: 40px;
-      cursor: pointer;
-    }
-
-    @media screen and (max-width: 768px) {
-      h1 {
-        font-size: 2em;
-      }
-
-      .description-box h2 {
-        font-size: 1.2em;
-      }
-
-      .description-box p {
-        font-size: 0.9em;
-      }
     }
   </style>
 </head>
 <body>
+  <h1>Vorynth Luxury Timepieces</h1>
+  <div class="grid">
 
-  <h1>Vorynth Signature Collection</h1>
-
-  <div class="gallery">
     <!-- Watch 1 -->
-    <div class="product">
-      <img src="watch1.jpeg" alt="Omega Seamaster Chronograph" onclick="openModal(this.src)">
-      <div class="description-box">
-        <h2>Omega Seamaster Chronograph</h2>
-        <p>Built for ocean explorers and time perfectionists, this diver’s chronograph features wave patterns and a ceramic bezel with rose gold accents.</p>
-        <div class="review">“Feels like I’m wearing precision on my wrist!” – James L.</div>
-      </div>
+    <div class="watch-card">
+      <img src="watch1.jpeg" alt="Vorynth Black Diamond">
+      <div class="watch-name">Vorynth Black Diamond</div>
+      <div class="review">"I never knew a timepiece could look this sharp. It feels like it was made for my wrist." – ★★★★★</div>
     </div>
 
     <!-- Watch 2 -->
-    <div class="product">
-      <img src="ulysse-nardin-luxury-watch.jpg" alt="Ulysse Nardin Perpetual GMT" onclick="openModal(this.src)">
-      <div class="description-box">
-        <h2>Ulysse Nardin Perpetual GMT</h2>
-        <p>Navigate time zones in style. The perpetual calendar and dual-time function make this a traveler’s dream, encased in brushed titanium elegance.</p>
-        <div class="review">“Perfect for my business trips. Sleek and smart.” – Akshay M.</div>
-      </div>
+    <div class="watch-card">
+      <img src="ulysse-nardin-luxury-watch.jpg" alt="Vorynth Midnight Steel">
+      <div class="watch-name">Vorynth Midnight Steel</div>
+      <div class="review">"Stunning in every detail. The contrast between the polished case and matte dial is breathtaking." – ★★★★☆</div>
     </div>
 
     <!-- Watch 3 -->
-    <div class="product">
-      <img src="50-great-watches-buy-2020-21-end-year-luxury-watches-mens-timepiece-iconic-pieces-top-50-best-prices-corum-golden-bridge-SPECIAL-men-2.jpg" alt="Corum Golden Bridge" onclick="openModal(this.src)">
-      <div class="description-box">
-        <h2>Corum Golden Bridge</h2>
-        <p>A transparent architectural marvel featuring a vertical baguette movement. A bold expression of horological design and mastery.</p>
-        <div class="review">“It’s a conversation starter every time.” – Rahul D.</div>
-      </div>
+    <div class="watch-card">
+      <img src="50-great-watches-buy-2020-21-end-year-luxury-watches-mens-timepiece-iconic-pieces-top-50-best-prices-corum-golden-bridge-SPECIAL-men-2.jpg" alt="Vorynth Golden Lineage">
+      <div class="watch-name">Vorynth Golden Lineage</div>
+      <div class="review">"A conversation starter every time. Elegant, bold, and perfectly balanced." – ★★★★★</div>
     </div>
 
     <!-- Watch 4 -->
-    <div class="product">
-      <img src="watch4.jpg" alt="Rolex Sea-Dweller Custom Gold" onclick="openModal(this.src)">
-      <div class="description-box">
-        <h2>Rolex Sea-Dweller Custom Gold</h2>
-        <p>The iconic diver’s watch reimagined with a luxurious golden twist. 1,220-meter water resistance meets timeless Rolex heritage.</p>
-        <div class="review">“Gold with grit. Just the way I like it.” – Mohan R.</div>
-      </div>
+    <div class="watch-card">
+      <img src="watch4.jpg" alt="Vorynth Arctic Phantom">
+      <div class="watch-name">Vorynth Arctic Phantom</div>
+      <div class="review">"Cool, crisp, and clean. This watch exudes quiet power." – ★★★★☆</div>
     </div>
+
   </div>
-
-  <!-- Modal -->
-  <div id="myModal" class="modal" onclick="closeModal()">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage">
-  </div>
-
-  <script>
-    function openModal(src) {
-      const modal = document.getElementById("myModal");
-      const modalImg = document.getElementById("modalImage");
-      modal.style.display = "block";
-      modalImg.src = src;
-    }
-
-    function closeModal() {
-      document.getElementById("myModal").style.display = "none";
-    }
-
-    // Allow ESC key to close modal
-    document.addEventListener("keydown", function(e) {
-      if (e.key === "Escape") closeModal();
-    });
-  </script>
-
 </body>
 </html>
